@@ -3,6 +3,7 @@
 
 password = input('Enter your password: ')
 char1 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+char2 = '0123456789'
 
 # check if the password is valid
 # check if the password is greater than 15 letters
@@ -24,4 +25,16 @@ if capital == 0:
     print('password not valid!')
 
 # have at least one number
+def count_char(char2, password):
+    count = 0
+    for c in password:
+        for d in char2:
+            if c == d:
+                count = count+1
+    return count
+number = count_char(char2, password)
+
+if number == 0:
+    print('password not valid!')
+
 # have at least one special character
